@@ -15,8 +15,9 @@ Switch's own graphics API. It runs at 60 fps.
 > contain no game data.
 
 ## How to install
-
+<div align=center>
 <img width="240" height="224" alt="spider-man-tobey-maguire" src="https://github.com/user-attachments/assets/5fa01c77-f0cd-49c1-a133-7a2308bfc8e1" />
+</div>
 
 
 1. Open the installer page: **https://zhtipu.github.io/shank1-nx-installer/**
@@ -57,9 +58,9 @@ The Xbox 360 layout on the Switch buttons by position. Stick clicks are L3 / R3.
 **L + R** with the D-pad (Up: performance overlay, Right: settings, Down: log console, Left: achievements).
 
 ## Known issues
-
+<div align=center>
 <img width="273" height="211" alt="giphy" src="https://github.com/user-attachments/assets/43ef00fa-53af-4a22-8761-1eaf5f9054b8" />
-
+</div>
 - The cutscene movies' sound can stutter and drift from the picture at the console's stock CPU clock (1020 MHz). They
   play correctly with the CPU at 1785 MHz (for example a sys-clk profile for this title).
 - The first visit to a new effect can stutter for a moment while its shader compiles (see above).
