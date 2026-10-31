@@ -1,6 +1,6 @@
 <div align=center>
 
-<img src="port/assets/icon.jpg" alt="Shank" width="20%">
+<img width="616" height="353" alt="capsule_616x353" src="https://github.com/user-attachments/assets/54108a00-ed00-4292-a191-c0c96868cc35" />
 
 </div>
 <h1 align=center>shank1-nx</h1>
@@ -15,6 +15,9 @@ Switch's own graphics API. It runs at 60 fps.
 > contain no game data.
 
 ## How to install
+
+<img width="640" height="624" alt="spider-man-tobey-maguire" src="https://github.com/user-attachments/assets/5fa01c77-f0cd-49c1-a133-7a2308bfc8e1" />
+
 
 1. Open the installer page: **https://zhtipu.github.io/shank1-nx-installer/**
 2. Choose your game (its package file, the `58410A62` folder, or an extracted folder with `default.xex`) and press
@@ -54,6 +57,8 @@ The Xbox 360 layout on the Switch buttons by position. Stick clicks are L3 / R3.
 **L + R** with the D-pad (Up: performance overlay, Right: settings, Down: log console, Left: achievements).
 
 ## Known issues
+
+<img width="373" height="311" alt="giphy" src="https://github.com/user-attachments/assets/43ef00fa-53af-4a22-8761-1eaf5f9054b8" />
 
 - The cutscene movies' sound can stutter and drift from the picture at the console's stock CPU clock (1020 MHz). They
   play correctly with the CPU at 1785 MHz (for example a sys-clk profile for this title).
