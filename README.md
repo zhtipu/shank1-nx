@@ -16,7 +16,7 @@ Switch's own graphics API. It runs at 60 fps.
 
 ## How to install
 
-<img width="640" height="624" alt="spider-man-tobey-maguire" src="https://github.com/user-attachments/assets/5fa01c77-f0cd-49c1-a133-7a2308bfc8e1" />
+<img width="240" height="224" alt="spider-man-tobey-maguire" src="https://github.com/user-attachments/assets/5fa01c77-f0cd-49c1-a133-7a2308bfc8e1" />
 
 
 1. Open the installer page: **https://zhtipu.github.io/shank1-nx-installer/**
