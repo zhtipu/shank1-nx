@@ -1,0 +1,72 @@
+<div align=center>
+
+<img src="port/assets/icon.jpg" alt="Shank" width="20%">
+
+</div>
+<h1 align=center>shank1-nx</h1>
+
+A native Nintendo Switch port of **Shank** (Klei Entertainment, Xbox Live Arcade, 2010). It is not an emulator:
+the game's PowerPC code is statically recompiled to C++, and it draws through a native renderer on deko3d, the
+Switch's own graphics API. It runs at 60 fps.
+
+> [!NOTE]
+> You need your own copy of the Xbox Live Arcade game: its content package from an Xbox 360
+> (`Content/0000000000000000/58410A62/000D0000/`), or the game extracted from it. This repository and its releases
+> contain no game data.
+
+## How to install
+
+1. Open the installer page: **https://zhtipu.github.io/shank1-nx-installer/**
+2. Choose your game (its package file, the `58410A62` folder, or an extracted folder with `default.xex`) and press
+   **Create shank1-nx.zip**. Everything runs in your browser and the game files never leave your computer: the page
+   checks your copy, downloads the build and makes the shaders and the game pack from your files.
+3. Extract `shank1-nx.zip` into `sdmc:/switch/`.
+4. Start it:
+   - **NSP (recommended):** install `shank1-nx-x.y.z.nsp` from the [latest release](https://github.com/zhtipu/shank1-nx/releases/latest)
+     with your installer of choice and start **Shank** from the HOME Menu. The NSP holds only the program; it reads
+     the game and its shaders from `/switch/shank1-nx/`.
+   - **NRO:** start `shank1.nro` from the Homebrew Menu in title takeover mode (hold **R** while launching an
+     installed game) or with a 39-bit forwarder. The album applet does not give the game enough memory.
+
+Your `shank1-nx` folder:
+
+```text
+/switch/shank1-nx/
+  shank1.nro
+  LICENSES.txt
+  deko3d_glsl.bin           (the game's shaders, made from your copy)
+  deko3d_shaders.bin        (the shaders compiled for the console; written as you play)
+  game_root.nxpack          (the files of your game, in one file)
+  game_root.nxidx
+  shank1.toml               (optional settings)
+```
+
+> [!CAUTION]
+> The first time you play, the console compiles each shader the first time it is drawn, so new places can stutter for
+> a moment. The compiled shaders are saved in `deko3d_shaders.bin` and later sessions start smoothly.
+
+**Updating:** open the installer page again and press **Create shank1-nx-update.zip** (only the program and the
+shaders), extract it over your folder, and install the new NSP if you use it.
+
+## Controls
+
+The Xbox 360 layout on the Switch buttons by position. Stick clicks are L3 / R3. The port's own menus are on
+**L + R** with the D-pad (Up: performance overlay, Right: settings, Down: log console, Left: achievements).
+
+## Known issues
+
+- The cutscene movies' sound can stutter and drift from the picture at the console's stock CPU clock (1020 MHz). They
+  play correctly with the CPU at 1785 MHz (for example a sys-clk profile for this title).
+- The first visit to a new effect can stutter for a moment while its shader compiles (see above).
+
+## Building
+
+See [docs/building.md](docs/building.md).
+
+## License
+
+GPL-3.0 (`LICENSE`). Third-party code and its licenses: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+Shank is a trademark of Klei Entertainment. This project is not affiliated with or endorsed by Klei
+Entertainment, Nintendo or Microsoft. Running homebrew requires custom firmware, which is against Nintendo's terms of
+service; use it at your own risk.
