@@ -58,7 +58,7 @@ The Xbox 360 layout on the Switch buttons by position. Stick clicks are L3 / R3.
 
 ## Known issues
 
-<img width="373" height="311" alt="giphy" src="https://github.com/user-attachments/assets/43ef00fa-53af-4a22-8761-1eaf5f9054b8" />
+<img width="273" height="211" alt="giphy" src="https://github.com/user-attachments/assets/43ef00fa-53af-4a22-8761-1eaf5f9054b8" />
 
 - The cutscene movies' sound can stutter and drift from the picture at the console's stock CPU clock (1020 MHz). They
   play correctly with the CPU at 1785 MHz (for example a sys-clk profile for this title).
