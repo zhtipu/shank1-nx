@@ -421,3 +421,34 @@ index 13abe89..c6edc51 100644
  
          HRESULT res = CreateDXGIFactory2(dxgiFactoryFlags, IID_PPV_ARGS(&dxgiFactory));
          if (FAILED(res)) {
+diff --git a/sdk/src/filesystem/entry.cpp b/sdk/src/filesystem/entry.cpp
+index 06e8a2f..93a4554 100644
+--- a/sdk/src/filesystem/entry.cpp
++++ b/sdk/src/filesystem/entry.cpp
+@@ -149,6 +149,26 @@ X_STATUS Entry::Rename(const std::filesystem::path& file_path) {
+     path_parts.erase(path_parts.begin());
+   }
+ 
++  // A rename onto an existing file in the same folder replaces it, as MoveFileEx(MOVEFILE_REPLACE_EXISTING) does:
++  // games save to a .tmp and rename it over the old save (Shank: Shank.sav.tmp -> Shank.sav). Horizon's file system
++  // refuses to rename onto an existing file (EEXIST), so every save after the first failed on the Switch and the
++  // progress stayed in the .tmp; and on every platform the replaced file's entry stayed in the folder next to the
++  // renamed one, so lookups could find the stale entry and its old size. The old file and its entry go first.
++  if (parent_ && !path_parts.empty()) {
++    std::string target_parent;
++    for (size_t i = 0; i + 1 < path_parts.size(); ++i) {
++      target_parent = target_parent.empty() ? std::string(path_parts[i])
++                                            : rex::string::utf8_join_guest_paths(target_parent, path_parts[i]);
++    }
++    if (rex::string::utf8_equal_case(target_parent, parent_->path())) {
++      Entry* existing = parent_->GetChild(path_parts.back());
++      if (existing && existing != this && !(existing->attributes() & kFileAttributeDirectory) &&
++          !parent_->Delete(existing)) {
++        return X_STATUS_ACCESS_DENIED;  // the old file is in use: the rename could not replace it
++      }
++    }
++  }
++
+   X_STATUS status = RenameEntryInternal(path_parts);
+   if (status != X_STATUS_SUCCESS) {
+     return status;
