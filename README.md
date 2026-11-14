@@ -20,13 +20,17 @@ Switch's own graphics API. It runs at 60 fps.
 </div>
 
 
+**Easiest: [NX Porting Kit](https://github.com/zhtipu/nx-porting-kit)** (Windows). It builds one self-contained NSP of Shank from your own copy of the game: pick Shank in its library, add your game files and press **Build NSP**. Install the NSP and start it from the HOME Menu, with nothing else to copy. You need your own `prod.keys`.
+
+**Or use the installer page:**
+
 1. Open the installer page: **https://zhtipu.github.io/shank1-nx-installer/**
 2. Choose your game (its package file, the `58410A62` folder, or an extracted folder with `default.xex`) and press
    **Create shank1-nx.zip**. Everything runs in your browser and the game files never leave your computer: the page
    checks your copy, downloads the build and makes the shaders and the game pack from your files.
 3. Extract `shank1-nx.zip` into `sdmc:/switch/`.
 4. Start it:
-   - **NSP (recommended):** install `shank1-nx-x.y.z.nsp` from the [latest release](https://github.com/zhtipu/shank1-nx/releases/latest)
+   - **NSP:** install `shank1-nx-x.y.z.nsp` from the [latest release](https://github.com/zhtipu/shank1-nx/releases/latest)
      with your installer of choice and start **Shank** from the HOME Menu. The NSP holds only the program; it reads
      the game and its shaders from `/switch/shank1-nx/`.
    - **NRO:** start `shank1.nro` from the Homebrew Menu in title takeover mode (hold **R** while launching an
